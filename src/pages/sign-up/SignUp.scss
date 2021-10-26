@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.signUpForm {
+    display:flex;
+    align-items: flex-end;
+    position: relative;
+}
+
+.signCard {
+    max-width: 560px;
+    height: auto;
+    /* min-height: 200px; */
+
+    /* text-align: center; */
+    padding: 0px 0 15px 0;
+    border-radius: 10px;
+    margin: 60px auto;
+    overflow: hidden;
+
+    background-color:#ffffff;
+}
+
+.signUpForm-group>input{
+    height: 30px !important;
+    width: 230px !important;
+}
+
+
+.signUpBanner {
+    /* border-radius: 10px 10px 0 0; */
+    height: 70px;
+    background: #F5DF4D;
+    /* background-size: 100% 35%; */
+    background-size: cover;
+    margin-bottom: 1rem;
+
+}
+.signUpBanner>h2{
+    font-size: 1.5rem;
+    color: #ffffff;
+    padding-top: 1.5rem;
+    text-align: center;
+}
+.signUpForm-group {
+    margin-top: 0.5rem;
+    margin-bottom: 1.2rem;
+    margin-right: 4rem;
+    margin-left: 4rem;
+}
+
+.signUpBtn {
+    color: white;
+    margin-top : .5rem;
+    margin-bottom : 1rem;
+    margin-left : .8rem;
+    /* margin-left :120px; */
+    background: #F5DF4D;
+    border: 1px solid #F5DF4D;
+    border-radius: 50pt ;
+    width: 120px ;
+    font-size:0.9rem;
+    line-height:1.2rem;
+
+}
+label{
+    margin-bottom: 0;
+    font-size:0.9rem;
+}
+.signUpBtn:hover {
+    color: white;
+    opacity:0.7;
+}
+.signUpAvatar{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    /* border: 1px solid black; */
+    /* margin: -50px auto 0px auto; */
+}
+
+.signUpAvatar img {
+    width: 100%;
+}
+.img-upload{
+    color: white;
+    margin-top : .5rem;
+    margin-bottom : .5rem;
+    margin-left :25px;
+    background: rgba(100, 100, 100, 1);
+    /* border: 1px solid #F5DF4D; */
+    border-radius: 10pt;
+    width: 100px;
+    font-size:0.9rem;
+    /* line-height:1.2rem; */
+
+}
+.full-upload{
+    position:absolute;
+    left: 352px;
+    bottom: 380px;
+}
+.img-upload:hover{
+    color: white;
+    opacity:0.7;
+}
+.advertise{
+    margin-bottom: 55px;
+    margin-left: 3px;
+}
+.advertise img{
+    height: 65px;
+    margin-top: 1.2rem;
+    margin-right: 2rem;
+}
+.signUp-group{
+    flex-grow: 1;
+}
+
+@media (max-width: 768px) { 
+    .advertise {
+        display: none;
+    }
+    .signUpForm {
+        display: flex;
+        flex-direction: column;
+
+    }
+    .full-upload{
+        width: 100%;
+        position: static;
+        order: 0;
+    }
+    .full-upload>button {
+        margin-left: 35%;
+        /* margin-right : auto; */
+    }
+    .info{
+        width: 100%;
+        order: 2;
+    }
+    .signUp-group{
+        width: 100%;
+        order: 2;
+    }
+
+    .signUpBtn{
+        order: 3;
+        margin-left: 33%;
+    }
+    .signUpAvatar{
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    overflow: hidden;
+    /* border: 1px solid black; */
+    /* margin: -50px auto 0px auto; */
+    margin-left : auto;
+    margin-right : auto;
+
+    }
+}
