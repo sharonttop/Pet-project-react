@@ -16,7 +16,7 @@ import ProductWomen from './pages/ProductWomen'
 import NotFoundPage from './pages/NotFoundPage'
 import ProductCategory from './pages/ProductCategory'
 import Member from './pages/member/Member'
-import InfoEdit from './pages/member/admin/user/InfoEdit'
+import InfoEdit from './pages/member/admin/user/InfoEdit/InfoEdit'
 import Student from './pages/Student'
 import SignUp from './pages/sign-up/SignUp'
 
@@ -108,7 +108,7 @@ function App() {
               <Route path="/productcategory">
                 <ProductCategory />
               </Route>
-              <Route path="/admin/user/infoedit">
+              {/* <Route path="/admin/user/infoedit">
                 <InfoEdit
                   auth={auth}
                   setAuth={setAuth}
@@ -119,7 +119,7 @@ function App() {
                   imgSrc={imgSrc}
                   setImgSrc={setImgSrc}
                 />
-              </Route>
+              </Route> */}
               <Route path="/admin/user/:task?">
                 <Member
                   auth={auth}

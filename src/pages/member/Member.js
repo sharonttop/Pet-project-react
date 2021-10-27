@@ -7,13 +7,13 @@ import {
 
 // 子頁面區域元件
 import UserOrder from './admin/user/UserOrder'
-import InfoEdit from './admin/user/InfoEdit'
+import InfoEdit from './admin/user/InfoEdit/InfoEdit'
 import AddressEdit from './admin/user/AddressEdit'
 import PasswordChange from './admin/user/PasswordChange'
 import PetId from './admin/user/PetId'
 
 // 預設出現的文字元件
-const Default = () => <>會員管理區域</>
+const Default = () => <>會員首頁</>
 
 function Member(props) {
   const { auth } = props
@@ -109,7 +109,7 @@ function Member(props) {
             </ul>
           </div>
           <div className="col-sm-9">
-            <h1>會員管理區</h1>
+            {/* <h1>會員管理區</h1> */}
             <Component />
           </div>
         </div>
