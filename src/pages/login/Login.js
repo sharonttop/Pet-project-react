@@ -10,6 +10,12 @@ function Login(props) {
 
   const { auth, setAuth } = props
 
+  //驗證有無token
+  const token = localStorage.getItem('token')
+  if (token) {
+    setAuth(true)
+  }
+
   const [fields, setFields] = useState({
     email: '',
     password: '',

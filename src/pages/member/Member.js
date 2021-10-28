@@ -16,9 +16,15 @@ import PetId from './admin/user/PetId'
 const Default = () => <>會員首頁</>
 
 function Member(props) {
-  const { auth } = props
+  const { auth, setAuth } = props
 
-  if (!auth) return <Redirect to="/login" />
+  // if (!auth) return <Redirect to="/login" />
+
+  //驗證有無token
+  const token = localStorage.getItem('token')
+  if (token) {
+    setAuth(true)
+  }
 
   //   if (!auth)
   //     return (

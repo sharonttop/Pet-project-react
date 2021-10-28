@@ -4,6 +4,7 @@ import conf, {
   UPLOAD_AVATAR,
   REGISTER,
 } from '../../config'
+import { withRouter } from 'react-router-dom'
 
 import axios from 'axios'
 import './SignUp.scss'
@@ -133,6 +134,8 @@ function SignUp(props) {
     })
     const data = await r.json()
     console.log(data)
+    alert('註冊成功')
+    props.history.push('/login')
   }
 
   const loading = (
@@ -347,4 +350,4 @@ function SignUp(props) {
   return <>{isLoading ? loading : display}</>
 }
 
-export default SignUp
+export default withRouter(SignUp)

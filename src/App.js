@@ -25,6 +25,7 @@ import MyNavbar from './components/MyNavbar'
 import MyFooter from './components/MyFooter'
 import MainContent from './components/MainContent'
 import ScrollToTop from './components/ScrollToTop'
+// import AuthHeader from './components/AuthHeader'
 //import BreadCrumb from './components/BreadCrumb'
 import MultiLevelBreadCrumb from './components/MultiLevelBreadCrumb'
 
@@ -70,6 +71,7 @@ function App() {
           {/* 切換顯示的元件畫面放在這下面 */}
           {/* ScrollToTop是為了讓連到另一頁內容時，頁面回到最上方 */}
           <ScrollToTop>
+          {/* <AuthHeader auth={auth} /> */}
             <Switch>
               <Route path="/student">
                 <Student />
