@@ -16,7 +16,7 @@ import ProductWomen from './pages/ProductWomen'
 import NotFoundPage from './pages/NotFoundPage'
 import ProductCategory from './pages/ProductCategory'
 import Member from './pages/member/Member'
-import InfoEdit from './pages/member/admin/user/InfoEdit/InfoEdit'
+// import InfoEdit from './pages/member/admin/user/InfoEdit/InfoEdit'
 import Student from './pages/Student'
 import SignUp from './pages/sign-up/SignUp'
 

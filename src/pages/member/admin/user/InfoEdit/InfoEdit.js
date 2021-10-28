@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import {
-  Link,
+  // Link,
   withRouter,
-  Redirect,
+  // Redirect,
 } from 'react-router-dom'
 import conf, {
   IMG_PATH,
@@ -14,7 +14,7 @@ import dayjs from 'dayjs'
 import axios from 'axios'
 import './InfoEdit.scss'
 
-function InfoEdit() {
+function InfoEdit(props) {
   //編輯功能--------------------------------------
   const [editFields, setEditFields] = useState({
     name: '',
@@ -71,10 +71,6 @@ function InfoEdit() {
     setEditImgSrc(r.data.filename)
   }
   // 專門用來處理每個欄位的輸入用
-
-  const doCancel = async (e) => {
-    e.preventDefault()
-  }
 
   const handleFieldChange = (e) => {
     const name = e.target.name
@@ -308,10 +304,10 @@ function InfoEdit() {
                 更新儲存
               </button>
               <button
-                type="submit"
+                type="button"
                 className="btn cancelSubmit"
                 onClick={() => {
-                  doCancel()
+                  props.history.push('/admin')
                 }}
               >
                 放棄編輯
