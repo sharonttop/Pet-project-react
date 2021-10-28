@@ -108,18 +108,6 @@ function App() {
               <Route path="/productcategory">
                 <ProductCategory />
               </Route>
-              {/* <Route path="/admin/user/infoedit">
-                <InfoEdit
-                  auth={auth}
-                  setAuth={setAuth}
-                  fields={fields}
-                  setFields={setFields}
-                  fieldErrors={fieldErrors}
-                  setFieldErrors={setFieldErrors}
-                  imgSrc={imgSrc}
-                  setImgSrc={setImgSrc}
-                />
-              </Route> */}
               <Route path="/admin/user/:task?">
                 <Member
                   auth={auth}
