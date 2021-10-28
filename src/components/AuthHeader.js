@@ -1,10 +1,11 @@
 import React from 'react'
+import { JWT_GET_DATA } from '../config'
 
 function AuthHeader(props) {
+  const { setAuth } = props
   const token = localStorage.getItem('token')
-
-  if (token)
-    fetch('', {
+  if (token) {
+    fetch(JWT_GET_DATA, {
       method: 'GET',
       headers: {
         Authorization: 'Bearer ' + token,
@@ -12,9 +13,11 @@ function AuthHeader(props) {
     })
       .then((r) => r.json())
       .then((obj) => {
-        JSON.stringify(obj, null, 4)
+        const r = JSON.stringify(obj, null, 4)
+        console.log(r)
       })
-
+    setAuth(true)
+  }
   return <></>
 }
 

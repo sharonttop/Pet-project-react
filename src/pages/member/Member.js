@@ -1,9 +1,5 @@
 import React from 'react'
-import {
-  Link,
-  withRouter,
-  Redirect,
-} from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 
 // 子頁面區域元件
 import UserOrder from './admin/user/UserOrder'
@@ -16,15 +12,15 @@ import PetId from './admin/user/PetId'
 const Default = () => <>會員首頁</>
 
 function Member(props) {
-  const { auth, setAuth } = props
+  // const { auth, setAuth } = props
 
   // if (!auth) return <Redirect to="/login" />
 
   //驗證有無token
-  const token = localStorage.getItem('token')
-  if (token) {
-    setAuth(true)
-  }
+  // const token = localStorage.getItem('token')
+  // if (token) {
+  //   setAuth(true)
+  // }
 
   //   if (!auth)
   //     return (

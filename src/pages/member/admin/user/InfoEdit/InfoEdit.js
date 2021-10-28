@@ -8,6 +8,7 @@ import conf, {
   IMG_PATH,
   UPLOAD_AVATAR,
   SIGN_UP,
+  JWT_GET_DATA,
 } from '../../../../../config'
 import dayjs from 'dayjs'
 
@@ -45,13 +46,30 @@ function InfoEdit(props) {
       setTimeout(() => setIsLoading(false), 1000)
     }
   }, [isLoading])
-
-  //抓取登入客人資料-----------
+  /*
+  //這樣又變成從前端抓的感覺
+  const token = localStorage.getItem('token')
+  //-------抓客人資料(測試後端)
+  useEffect(() => {
+    setIsLoading(true)
+    ;(async () => {
+      const r = await fetch(JWT_GET_DATA, {
+        method: 'GET',
+        headers: {
+          Authorization: 'Bearer ' + token,
+        }, //設定檔頭，確認Authorization是否有送出Bearer格式的token，'Bearer '一定後面要空一格
+      })
+      const obj = await r.json()
+      setEditFields(obj)
+      setEditImgSrc(obj.avatar)
+    })()
+  }, [])
+  */
+  //抓取登入客人資料(前端)-----------
   const userId = JSON.parse(
     localStorage.getItem('member')
   ).id
-
-  //-------抓客人資料
+  // ------抓客人資料(前端)
   useEffect(() => {
     setIsLoading(true)
     ;(async () => {
@@ -134,7 +152,7 @@ function InfoEdit(props) {
     console.log(formData.get('mobile'))
     console.log(formData.get('address'))
 
-    // ****** 修改 ******
+    // ****** 修改(前端) ******
     const usp = new URLSearchParams(
       new FormData(document.edit_form)
     )
@@ -149,6 +167,7 @@ function InfoEdit(props) {
     const data = await r.json()
     console.log(data)
   }
+  // ****** 修改(後端測試) ******
 
   const loading = (
     <>
