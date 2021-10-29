@@ -5,7 +5,7 @@ import { Link, withRouter } from 'react-router-dom'
 import UserOrder from './admin/user/UserOrder'
 import InfoEdit from './admin/user/InfoEdit/InfoEdit'
 import AddressEdit from './admin/user/AddressEdit'
-import PasswordChange from './admin/user/PasswordChange'
+import PasswordChange from './admin/user/PasswordChange/PasswordChange'
 import PetId from './admin/user/PetId'
 
 // 預設出現的文字元件

@@ -7,8 +7,9 @@ import {
 import conf, {
   IMG_PATH,
   UPLOAD_AVATAR,
-  SIGN_UP,
-  JWT_GET_DATA,
+  // SIGN_UP,
+  AUTH_TOKEN,
+  // JWT_GET_DATA,
 } from '../../../../../config'
 import dayjs from 'dayjs'
 
@@ -46,39 +47,37 @@ function InfoEdit(props) {
       setTimeout(() => setIsLoading(false), 1000)
     }
   }, [isLoading])
-  /*
-  //這樣又變成從前端抓的感覺
+
   const token = localStorage.getItem('token')
   //-------抓客人資料(測試後端)
   useEffect(() => {
     setIsLoading(true)
     ;(async () => {
-      const r = await fetch(JWT_GET_DATA, {
+      const r = await fetch(AUTH_TOKEN, {
         method: 'GET',
         headers: {
           Authorization: 'Bearer ' + token,
         }, //設定檔頭，確認Authorization是否有送出Bearer格式的token，'Bearer '一定後面要空一格
       })
       const obj = await r.json()
+
       setEditFields(obj)
       setEditImgSrc(obj.avatar)
     })()
   }, [])
-  */
+
   //抓取登入客人資料(前端)-----------
-  const userId = JSON.parse(
-    localStorage.getItem('member')
-  ).id
+
   // ------抓客人資料(前端)
-  useEffect(() => {
-    setIsLoading(true)
-    ;(async () => {
-      const r = await fetch(SIGN_UP + '/' + userId)
-      const obj = await r.json()
-      setEditFields(obj)
-      setEditImgSrc(obj.avatar)
-    })()
-  }, [])
+  // useEffect(() => {
+  //   setIsLoading(true)
+  //   ;(async () => {
+  //     const r = await fetch(SIGN_UP + '/' + userId)
+  //     const obj = await r.json()
+  //     setEditFields(obj)
+  //     setEditImgSrc(obj.avatar)
+  //   })()
+  // }, [])
 
   //專用元件:地址、地區(還沒做)=================================================
   const doUpload = async () => {
@@ -152,22 +151,38 @@ function InfoEdit(props) {
     console.log(formData.get('mobile'))
     console.log(formData.get('address'))
 
-    // ****** 修改(前端) ******
     const usp = new URLSearchParams(
       new FormData(document.edit_form)
     )
-    // console.log(usp.toString());
-    const r = await fetch(SIGN_UP + '/' + userId, {
+    // ****** 修改(前端) ******
+    // const userId = JSON.parse(
+    //   localStorage.getItem('member')
+    // ).id
+    //---
+    // // console.log(usp.toString());
+    // const r = await fetch(SIGN_UP + '/' + userId, {
+    //   method: 'PUT',
+    //   body: usp.toString(),
+    //   headers: {
+    //     'Content-Type': 'application/x-www-form-urlencoded',
+    //   },
+    // })
+    // const data = await r.json()
+    // console.log(data)
+    // ****** 修改(後端測試) ******
+    const r = await fetch(AUTH_TOKEN, {
       method: 'PUT',
       body: usp.toString(),
       headers: {
+        Authorization: 'Bearer ' + token,
         'Content-Type': 'application/x-www-form-urlencoded',
-      },
+      }, //設定檔頭，確認Authorization是否有送出Bearer格式的token，'Bearer '一定後面要空一格
     })
     const data = await r.json()
     console.log(data)
+
+    //---
   }
-  // ****** 修改(後端測試) ******
 
   const loading = (
     <>
