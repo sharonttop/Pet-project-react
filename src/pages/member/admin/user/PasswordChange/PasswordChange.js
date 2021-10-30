@@ -46,7 +46,6 @@ function PasswordChange(props) {
       })
       const obj = await r.json()
       console.log(obj.password)
-
       // setEditFields(obj)
     })()
   }, [])
