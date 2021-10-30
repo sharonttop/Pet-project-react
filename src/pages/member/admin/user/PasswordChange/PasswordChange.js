@@ -11,13 +11,13 @@ import conf, {
 function PasswordChange(props) {
   //編輯功能--------------------------------------
   const [editFields, setEditFields] = useState({
+    oldpassword: '',
     password: '',
-    newpassword: '',
   })
   // 2.存入錯誤訊息用
   const [editFieldsErrors, setEditFieldsErrors] = useState({
+    oldpassword: '',
     password: '',
-    newpassword: '',
   })
   //上相片呈現資料資料----------
 
@@ -92,13 +92,13 @@ function PasswordChange(props) {
 
     // 檢查確認密碼&密碼欄位
     if (
-      formData.get('newpassword') !==
+      formData.get('password') !==
       formData.get('confirmPassword')
     ) {
       // 設定錯誤訊息狀態
       const updatedFieldErrors = {
         ...editFieldsErrors,
-        newpassword: '密碼與確認密碼欄位輸入值不相同',
+        password: '密碼與確認密碼欄位輸入值不相同',
         confirmPassword: '密碼與確認密碼欄位輸入值不相同',
       }
 
@@ -158,8 +158,8 @@ function PasswordChange(props) {
                 <input
                   className="form-control"
                   type="password"
-                  name="password"
-                  value={editFields.password}
+                  name="oldpassword"
+                  value={editFields.oldpassword}
                   onChange={handleFieldChange}
                   required
                   minLength="5"
@@ -171,16 +171,16 @@ function PasswordChange(props) {
                 <input
                   className="form-control"
                   type="password"
-                  name="newpassword"
-                  value={editFields.newpassword}
+                  name="password"
+                  value={editFields.password}
                   onChange={handleFieldChange}
                   required
                   minLength="5"
                   placeholder="Password"
                 />
-                {editFieldsErrors.newpassword !== '' && (
+                {editFieldsErrors.password !== '' && (
                   <div className="error">
-                    {editFieldsErrors.newpassword}
+                    {editFieldsErrors.password}
                   </div>
                 )}
               </div>
