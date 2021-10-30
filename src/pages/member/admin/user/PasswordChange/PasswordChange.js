@@ -33,22 +33,6 @@ function PasswordChange(props) {
 
   const token = localStorage.getItem('token')
 
-  //-------抓客人資料(測試後端)
-
-  useEffect(() => {
-    setIsLoading(true)
-    ;(async () => {
-      const r = await fetch(PASSWORD_CHANGE, {
-        method: 'GET',
-        headers: {
-          Authorization: 'Bearer ' + token,
-        }, //設定檔頭，確認Authorization是否有送出Bearer格式的token，'Bearer '一定後面要空一格
-      })
-      const obj = await r.json()
-      console.log(obj.password)
-      // setEditFields(obj)
-    })()
-  }, [])
 
   const handleFieldChange = (e) => {
     const name = e.target.name
