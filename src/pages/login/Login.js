@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { withRouter } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import conf, { LOGIN_JWT } from '../../config'
+import { FaPaw } from 'react-icons/fa'
 import './Login.scss'
 
 function Login(props) {
@@ -225,6 +226,12 @@ function Login(props) {
                   {fieldErrors.password}
                 </div>
               )}
+            </div>
+            <div className="loginSignUpLink">
+              <Link to="/signup">
+                <FaPaw />
+                立即加入會員
+              </Link>
             </div>
             <button type="submit" className="btn loginBtn">
               會員登入
