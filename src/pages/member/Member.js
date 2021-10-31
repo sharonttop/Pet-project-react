@@ -7,6 +7,7 @@ import InfoEdit from './admin/user/InfoEdit/InfoEdit'
 import AddressEdit from './admin/user/AddressEdit'
 import PasswordChange from './admin/user/PasswordChange/PasswordChange'
 import PetId from './admin/user/PetId'
+import './Member.scss'
 
 // 預設出現的文字元件
 const Default = () => <>會員首頁</>
@@ -31,11 +32,11 @@ function Member(props) {
   console.log(props)
 
   //location:內的search: "?order_id=3"可以抓到
-  const searchParams = new URLSearchParams(
-    props.location.search
-  )
-  const order_id = searchParams.get('order_id')
-  console.log(order_id)
+  // const searchParams = new URLSearchParams(
+  //   props.location.search
+  // )
+  // const order_id = searchParams.get('order_id')
+  // console.log(order_id)
 
   // 網址參數對應頁面區塊元件
   // 屬性 = 網址上的task參數 props.match.params.task
@@ -58,34 +59,46 @@ function Member(props) {
       <div className="container">
         <div className="row">
           <div className="col-sm-3">
+            <div className="card memberCard">
+              <div className="memberBanner">
+                <h2>會員訊息</h2>
+              </div>
+              <div className="wrap">
+                <ul>
+                  <li>
+                    <Link to="/admin/user/infoedit">
+                      個人資料
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/admin/user/petid">
+                      毛孩ID
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/admin/user/order">
+                      我的訂單
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/admin/user/favoritelist">
+                      追蹤清單
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/admin/user/addressedit">
+                      收貨地址
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/admin/user/passwordchange">
+                      密碼修改
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
             <ul>
-              <h4>會員訊息</h4>
-              <li>
-                <Link to="/admin/user/infoedit">
-                  個人資料
-                </Link>
-              </li>
-              <li>
-                <Link to="/admin/user/petid">毛孩ID</Link>
-              </li>
-              <li>
-                <Link to="/admin/user/order">我的訂單</Link>
-              </li>
-              <li>
-                <Link to="/admin/user/favoritelist">
-                  追蹤清單
-                </Link>
-              </li>
-              <li>
-                <Link to="/admin/user/addressedit">
-                  收貨地址
-                </Link>
-              </li>
-              <li>
-                <Link to="/admin/user/passwordchange">
-                  密碼修改
-                </Link>
-              </li>
               <h4>毛孩認養</h4>
               <li>
                 <Link to="/admin/user/passwordchange">

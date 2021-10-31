@@ -7,6 +7,7 @@ import {
 import conf, {
   PASSWORD_CHANGE,
 } from '../../../../../config'
+import './PasswordChange.scss'
 
 function PasswordChange(props) {
   //編輯功能--------------------------------------
@@ -109,7 +110,7 @@ function PasswordChange(props) {
     }
 
     const usp = new URLSearchParams(
-      new FormData(document.edit_form)
+      new FormData(document.passwordChange_form)
     )
 
     // ****** 修改(後端測試) ******
@@ -144,20 +145,20 @@ function PasswordChange(props) {
 
   const display = (
     <>
-      <div className="card infoEditCard">
-        <div className="infoEditBanner">
+      <div className="card passwordChangeCard">
+        <div className="passwordChangeBanner">
           <h2>變更密碼</h2>
         </div>
-        <div className="infoEditWrap">
+        <div className="passwordChangeWrap">
           <form
-            className="infoEditForm"
-            name="edit_form"
+            className="passwordChangeForm"
+            name="passwordChange_form"
             onSubmit={handleSubmit}
             onChange={handleFormChange}
             onInvalid={handleFormInvalid}
           >
-            <div className="infoEditInfo">
-              <div className="signUpForm-group">
+            <div className="passwordChangeInfo">
+              <div className="passwordChangeForm-group">
                 <label>輸入舊密碼</label>
                 <input
                   className="form-control"
@@ -175,7 +176,7 @@ function PasswordChange(props) {
                   </div>
                 )}
               </div>
-              <div className="signUpForm-group">
+              <div className="passwordChangeForm-group">
                 <label>輸入新密碼</label>
                 <input
                   className="form-control"
@@ -193,7 +194,7 @@ function PasswordChange(props) {
                   </div>
                 )}
               </div>
-              <div className="signUpForm-group">
+              <div className="passwordChangeForm-group">
                 <label>再次輸入新密碼</label>
                 <input
                   className="form-control"
@@ -215,7 +216,7 @@ function PasswordChange(props) {
             </div>
             <button
               type="submit"
-              className="btn infoEditBtn"
+              className="btn passwordChangeBtn"
             >
               更新儲存
             </button>

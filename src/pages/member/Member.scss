@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.memberCard {
+    max-width: 400px;
+    height: auto;
+    /* min-height: 200px; */
+
+    // text-align: center;
+    // padding: 0px 0 15px 0;
+    border-radius: 10px;
+    margin: 0px auto;
+    overflow: hidden;
+
+    background-color:#ffffff;
+}
+
+.memberBanner {
+    /* border-radius: 10px 10px 0 0; */
+    height: 60px;
+    background: #F5DF4D;
+    /* background-size: 100% 35%; */
+    background-size: cover;
+    margin-bottom: 1rem;
+
+}
+.memberBanner>h2{
+    font-size: 1.5rem;
+    color: #ffffff;
+    padding-top: 1rem;
+    text-align: center;
+}
+// .memberCard>ul>li {
+//     padding-right: 1rem;
+// }
