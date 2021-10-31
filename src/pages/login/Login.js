@@ -85,8 +85,8 @@ function Login(props) {
       //將顧客資料基本資料從前端存到localStorage，注意不要存放敏感性資料，譬如身分證手機等等
       localStorage.setItem('token', data.token)
       //儲存到localStorage
-
       alert('登入成功')
+      props.history.push('/')
     } else {
       alert('登入錯誤\n' + (data.error || ''))
     }

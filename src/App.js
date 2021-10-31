@@ -10,14 +10,9 @@ import React, { useState } from 'react'
 import Home from './pages/Home'
 import About from './pages/About'
 import Login from './pages/login/Login'
-import ProductBaby from './pages/ProductBaby'
-import ProductMen from './pages/ProductMen'
-import ProductWomen from './pages/ProductWomen'
 import NotFoundPage from './pages/NotFoundPage'
-import ProductCategory from './pages/ProductCategory'
 import Member from './pages/member/Member'
 // import InfoEdit from './pages/member/admin/user/InfoEdit/InfoEdit'
-import Student from './pages/Student'
 import SignUp from './pages/sign-up/SignUp'
 
 // 組合用元件
@@ -73,19 +68,6 @@ function App() {
           <ScrollToTop>
             <AuthHeader setAuth={setAuth} />
             <Switch>
-              <Route path="/student">
-                <Student />
-              </Route>
-              <Route path="/product/women">
-                <ProductWomen />
-              </Route>
-              <Route path="/product/men">
-                <ProductMen />
-              </Route>
-              {/* 這裡要定義網址參數的屬性名稱 */}
-              <Route path="/product/baby/:id?">
-                <ProductBaby />
-              </Route>
               <Route path="/login">
                 {/* 利用props傳入頁面元件狀態 */}
                 <Login auth={auth} setAuth={setAuth} />
@@ -106,9 +88,6 @@ function App() {
               </Route>
               <Route exact path="/">
                 <Home auth={auth} />
-              </Route>
-              <Route path="/productcategory">
-                <ProductCategory />
               </Route>
               <Route path="/admin/user/:task?">
                 <Member

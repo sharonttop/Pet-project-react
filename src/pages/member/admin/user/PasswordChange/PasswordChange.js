@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom'
 import conf, {
   PASSWORD_CHANGE,
+  API_HOST,
 } from '../../../../../config'
 import './PasswordChange.scss'
 
@@ -125,7 +126,11 @@ function PasswordChange(props) {
     const data = await r.json()
     console.log(data)
     if (data.success) {
-      alert('密碼變更成功')
+      alert('密碼變更成功，請重新登入')
+      localStorage.removeItem('member')
+      localStorage.removeItem('token')
+      props.history.push('/login')
+      window.location.reload() //強制刷新頁面
     } else {
       alert('密碼變更失敗:\n' + (data.error || ''))
     }
@@ -168,7 +173,7 @@ function PasswordChange(props) {
                   onChange={handleFieldChange}
                   required
                   minLength="5"
-                  placeholder="Password"
+                  placeholder="oldPassword"
                 />
                 {editFieldsErrors.oldpassword !== '' && (
                   <div className="error">
@@ -186,7 +191,7 @@ function PasswordChange(props) {
                   onChange={handleFieldChange}
                   required
                   minLength="5"
-                  placeholder="Password"
+                  placeholder="newPassword"
                 />
                 {editFieldsErrors.password !== '' && (
                   <div className="error">

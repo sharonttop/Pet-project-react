@@ -38,48 +38,6 @@ function MyNavbar(props) {
                 會員專區
               </Nav.Link>
             )}
-            <Nav.Link as={NavLink} to="/productcategory">
-              產品分類
-            </Nav.Link>
-            <Nav.Link as={NavLink} to="/student">
-              學生資料
-            </Nav.Link>
-            <NavDropdown
-              title="產品"
-              id="collasible-nav-dropdown"
-            >
-              <NavDropdown.Item
-                as={NavLink}
-                to="/product/men"
-              >
-                MEN
-              </NavDropdown.Item>
-              <NavDropdown.Item
-                as={NavLink}
-                to="/product/women"
-              >
-                WOMEN
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item
-                as={NavLink}
-                to="/product/kids"
-              >
-                KIDS
-              </NavDropdown.Item>
-              <NavDropdown.Item
-                as={NavLink}
-                to="/product/baby"
-              >
-                BABY
-              </NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
-          <Nav>
-            <Nav.Link href="#deets">More deets</Nav.Link>
-            <Nav.Link eventKey={2} href="#memes">
-              Dank memes
-            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

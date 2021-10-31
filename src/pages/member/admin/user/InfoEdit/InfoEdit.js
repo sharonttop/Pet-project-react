@@ -180,6 +180,8 @@ function InfoEdit(props) {
     })
     const data = await r.json()
     console.log(data)
+    alert('已更新儲存')
+    props.history.push('/admin')
 
     //---
   }

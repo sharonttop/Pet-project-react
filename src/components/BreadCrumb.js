@@ -4,11 +4,7 @@ function BreadCrumb(props) {
   console.log(props)
   const { location } = props
 
-  const pathnameList = [
-    '/about',
-    '/login',
-    '/productcategory',
-  ]
+  const pathnameList = ['/about', '/login']
   const pathnameTextList = ['關於我們', '登入', '產品分類']
 
   const convertPathnameToText = (pathname) => {
