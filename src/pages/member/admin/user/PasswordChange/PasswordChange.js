@@ -33,7 +33,6 @@ function PasswordChange(props) {
 
   const token = localStorage.getItem('token')
 
-
   const handleFieldChange = (e) => {
     const name = e.target.name
     const value = e.target.value
@@ -124,6 +123,11 @@ function PasswordChange(props) {
     })
     const data = await r.json()
     console.log(data)
+    if (data.success) {
+      alert('密碼變更成功')
+    } else {
+      alert('密碼變更失敗:\n' + (data.error || ''))
+    }
 
     //---
   }
@@ -165,6 +169,11 @@ function PasswordChange(props) {
                   minLength="5"
                   placeholder="Password"
                 />
+                {editFieldsErrors.oldpassword !== '' && (
+                  <div className="error">
+                    {editFieldsErrors.oldpassword}
+                  </div>
+                )}
               </div>
               <div className="signUpForm-group">
                 <label>輸入新密碼</label>
